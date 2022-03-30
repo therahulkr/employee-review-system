@@ -1,0 +1,28 @@
+<div style="width: 80%;margin: auto;" class="workcontainer">
+    <h1 style="text-align: center;">Review Assign</h1>
+
+    <div style="width: 50%;"class="firstcont">
+        
+        <form action="/request/create" method="post">
+            <div class="sending">
+                    <label for="cars">From:</label>
+                    <select name="sender" id="sender">
+                        <%var i=0; for(user of allusers){if(!user.isadmin){%>
+                            <option value="<%= user._id%>"><%= user.name%></option>
+                        <%}}%>
+                    </select>
+            </div>
+
+            <div class="sending">
+                        <label for="cars">To:</label>
+                        <select name="reciever" id="reciever">
+                            <%var i=0; for(user of allusers){ if(!user.isadmin){%>
+                                <option value="<%= user._id%>"><%= user.name%></option>
+                            <%}}%>
+                        </select>
+            </div>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>

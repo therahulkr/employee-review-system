@@ -1,0 +1,114 @@
+.entry{
+    width: 40%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+}
+
+#loginform input{
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+input[type=submit]{
+    background-color:#9cd6f1;
+    border: none;
+    outline: none;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+#loginform a{
+    text-decoration: none;
+}
+
+#registerform input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.notuser{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile_info{
+    margin-left: 1rem;
+}
+
+.profile_info p{
+    font-size: 2rem;
+}
+
+
+.listcont{
+    width: 80%;
+    margin: auto;
+}
+
+.outer{
+    display: flex;
+}
+.innerf{
+    width: 50%;
+    margin: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.innerf p{
+    text-align: center;
+    background-color: rgb(1, 31, 31);
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+}
+.inners{
+    width: 50%;
+    margin: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.inners p{
+    text-align: center;
+    background-color: rgb(1, 31, 31);
+    border-radius: 1rem;
+    color: white;
+    font-size: 1.7rem;
+}
+.sendreview{
+    padding: 1rem;
+}
+.sendreview textarea{
+    width: 100%;
+}
+.sendreview input[type="submit"]{
+    display: block;
+    text-align: right;
+}
+
+.firstcont{
+    border: 1px solid black;
+    padding:2rem;
+}
+
+
+.sending label{
+    display: block;
+}
+.sending select{
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.reviewsfromothers{
+    margin: 0.3rem 1rem;
+    background-color: black;
+    color: white;
+}

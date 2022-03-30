@@ -1,0 +1,55 @@
+<%if(user.isadmin){%>
+<div class="profile_info" onload="hidebar()">
+
+    <p>Name : <%= user.name %></p>
+    <p>Email : <%= user.email %></p>
+    <p>Role : <% if(user.isadmin) {%> 
+               Admin<%}else{%> Employee  <%}%>
+    </p>
+    <button type="button" class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/admin/all">All User</a></button>
+    <button type="button" class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/admin/allforwork">Assign Work</a></button>
+    <button type="button" class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/admin/register">Register</a></button>
+    <!-- <button  ><a href="/users/logout"></a></button> -->
+</div>
+<%}else{%>
+    <div class="profile_info" onload="hidebar()">
+
+        <p>Name : <%= user.name %></p>
+        <p>Email : <%= user.email %></p>
+        <p>Role : <% if(user.isadmin) {%> 
+                   Admin<%}else{%> Employee  <%}%>
+        </p>
+        <p>Request : <%= rlist.length %></p>
+        <p>Reviews : <%= allreviews.length %></p>
+
+        <div class="outer" style="width: 100%; ">
+            <div class="innerf">
+                <p>Send your Review</p>
+                <%for(recievers of rlist){%>
+                    <%for(user of allusers){ if(user._id.toString()===recievers.requestfor.toString()){%>
+                        <form  action="/review/assign" class='sendreview' method='post' >
+                            <b>to:<%=user.name%></b>
+                            <textarea name='message' placeholder="review..." required></textarea><br>
+                            <div>Rating:</div><input type="range" name="rating" min="0" value="0" max="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>0</output>
+                            <input type="hidden" name="recieverId" value="<%=user._id%>">
+                            <input type="hidden" name="deletethisrequest" value="<%=recievers.requestId%>">
+                            <input type="submit" value='Post'>
+                        </form>
+                    <%}}%>
+                 <%}%>
+            </div>
+            <div class="inners">
+                <p>My Reviews</p>
+                <%for(review of allreviews){ %>
+                    <div class="reviewsfromothers">
+                        <span>From : <%=review.from%></span>
+                       <h4><%=review.message%></h4>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+        <!-- <button  ><a href="/users/logout"></a></button> -->
+    </div>
+<%}%>
+

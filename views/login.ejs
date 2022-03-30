@@ -1,0 +1,20 @@
+<!-- <link rel="stylesheet" href="/css/sign-in.css"> -->
+
+
+<div class="entry">
+    <h1 style="margin-bottom: 2rem;">
+        Log-In in your Account 
+    </h1>
+    
+    <div class="container">
+            <form id="loginform" action="/users/session" method="post">
+                <input type="email" name = 'email' placeholder="Enter your email" required>
+                <input type="password" name='password' placeholder="Enter your password" required>
+                <!-- <div>Not a Member? <a href="/users/register">Register</a></div> -->
+                <input type="submit" value="login" id='login-btn'>
+            </form>
+            <!-- <button style="background-color: #d93025; padding:20px; border:0px; border-radius: 10px;">
+                <a style="color:white; text-decoration: none; font-size: 20px;"href="/users/auth/google">Sign-In/Sign-Up Using Google</a>
+            </button> -->
+    </div>
+</div>
