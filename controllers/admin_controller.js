@@ -23,7 +23,7 @@ exports.create = async(req,res)=>{
          password : req.body.password,
          isadmin : false
      });
-     return res.redirect('/');
+     return res.redirect('/admin/register');
     } 
     catch (error) {
         console.log(error);
