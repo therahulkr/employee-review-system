@@ -1,8 +1,11 @@
 require('dotenv').config({path:'config/config.env'});
 const app = require('./app.js');
+
+//connect to the mongodb database
 const connectDatabase = require("./config/mongoose.js");
 const port = process.env.PORT || 8000
 
+//error for eg:- make use of undeclared variables
 process.on('uncaughtException',(err)=>{
     console.log('Error',`${err.message}`);
     console.log('Shutting down the server due to unhandled Exception');

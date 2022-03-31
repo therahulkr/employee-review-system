@@ -1,6 +1,6 @@
 const User = require('../models/user');
 
-
+// to create a user
 exports.create = async(req,res)=>{
     try {
      const {password,confirm_password} = req.body;
@@ -30,13 +30,14 @@ exports.create = async(req,res)=>{
     }
  }
 
- 
+//  register page rendering
 exports.registerUser = async(req,res)=>{
     return   res.render('register', {
         title: 'Register'
     })
 }
 
+// get the all user for admin
 exports.allUsers = async(req,res)=>{
     let users = await User.find();
     return res.render('listofusers',{
@@ -44,6 +45,8 @@ exports.allUsers = async(req,res)=>{
         allusers : users
     })
 }
+
+// get all user to assign work
 exports.alluserforwork = async(req,res)=>{
     let users = await User.find();
     return res.render('work',{
@@ -52,11 +55,13 @@ exports.alluserforwork = async(req,res)=>{
     })
 }
 
+// to remove a user 
 exports.deleteOne = async(req,res)=>{
     await User.findByIdAndDelete(req.params.id);
     return res.redirect('back');
 }
 
+// to make user from employee to admin
 exports.changeRoles = async(req,res)=>{
     let user = await User.findById(req.params.id);
     user.isadmin = !user.isadmin;

@@ -4,7 +4,7 @@ const Request = require('../models/request');
 const Review = require('../models/review');
 // const review = require('../models/review');
 
-
+// login 
 exports.loginUser = async(req,res)=>{
     if(req.isAuthenticated()){
         return res.redirect('/users/profile');
@@ -14,15 +14,19 @@ exports.loginUser = async(req,res)=>{
     })
 }
 
+// page to show after login
 exports.session = async(req,res)=>{
     return res.redirect('/users/profile');
 }
 
+// logout a user
 module.exports.destroysession = (req,res)=>{
     req.logout();//funcn given to req by passportjs
     return res.redirect('/users/login');
 }
 
+
+// displaying of user profile
 exports.profile = async(req,res) => {
 
     if(req.user.isadmin){

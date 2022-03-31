@@ -3,6 +3,7 @@ const Review = require('../models/review');
 const Request = require('../models/request');
 const { default: mongoose } = require('mongoose');
 
+// assign of review from one employee to another
 exports.assignReview = async(req,res)=>{
     // console.log(req.body);
     let find = mongoose.Types.ObjectId(req.body.recieverId);
