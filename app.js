@@ -28,7 +28,7 @@ app.use(expressSession({
     },
     store : MongoStore.create(
         { 
-            mongoUrl: `mongodb://localhost/${process.env.DB_URI}`,
+            mongoUrl: process.env.DB_URI,
             autoRemove:'disabled' 
         },
         (err)=>{
